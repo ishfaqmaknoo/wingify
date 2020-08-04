@@ -108,6 +108,9 @@ a {
 		vertical-align: middle;
 		cursor: pointer;
 	}
+	small {
+		font-size: 12px;
+	}
 }
 
 /******form validation*******/
@@ -184,10 +187,9 @@ a {
 		position: relative;
 		transition: all 0.3s ease-in-out;
 		background-color: $theme-yellow;
-		max-width: 90%;
+		max-width: 380px;
 		width: 100%;
 		margin: 0 auto;
-
 		border-radius: 4px;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.10);
 		padding: 20px;

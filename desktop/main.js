@@ -3,17 +3,19 @@
  * OPEN MODAL ON MOUSE OUT
  * 
  * ***********/
-
 openModal();
 function openModal() {
-	document.addEventListener('mouseout', onMouseOut);
+	document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('mouseout', function(event) {
+			if (!event.toElement && !event.relatedTarget) {
+				setTimeout(function() {
+					let wrapper = document.querySelector('.wrapper');
+					wrapper.style.visibility = 'visible';
+				}, 1000);
+			}
+		});
+	});
 }
-
-function onMouseOut() {
-	let wrapper = document.querySelector('.wrapper');
-	wrapper.style.visibility = 'visible';
-}
-
 /*****
  * 
  * 
@@ -48,14 +50,12 @@ function formValidate() {
 			getInvalidNode(email, 'email is not valid');
 		} else {
 			onSuccess(email);
-			let emailValue = email.value;
 		}
 
 		if (!checkbox.checked) {
 			getInvalidNode(checkbox, 'checkbox is not checked');
 		} else {
 			onSuccess(checkbox);
-			let checkboxValue = checkbox.checked;
 		}
 
 		if (!email.value == '' && checkbox.checked) {
@@ -64,10 +64,8 @@ function formValidate() {
 
 			let modal = document.querySelector('.wrapper');
 
-			let na = modal.classList.add('hide');
+			modal.classList.add('hide');
 			modal.classList.remove('unhide');
-
-			console.log(na);
 		}
 	});
 
@@ -93,3 +91,10 @@ function formValidate() {
 		});
 	}
 }
+
+/***********
+ * 
+ * 
+ * Reload Page
+ * 
+ * ***********/

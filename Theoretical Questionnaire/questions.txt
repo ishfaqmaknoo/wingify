@@ -1,0 +1,71 @@
+Q1:- 
+Cookies store the data in string, usually store the users data and info which could be used in future
+
+session storage stores the data as in array or object,session storage remains untill we are in browser, after exiting or changing browser tab, session data gets removed
+
+local storage stores the data  as in session storage, but remain there in browser even if we close the browser,
+
+
+Q2:- function block is used to wrap the set of logic,or we can say a modular way of writing code  which will not make any conflict to other functionalities, and it's best practice to make our code clean and reusable
+
+
+Q3:-
+a:- console.log(0.1 + 0.2);
+
+---> 0.30000000000000004
+
+b:- console.log(0.1+0.2 == 0.3)
+---> False
+
+Note:--  0.1 + 0.2 = 0.30000000000000004, which means 0.1 + 0.2 is not equal to 0.3, 
+
+Q4:- 
+a:-
+function sum(x, y) {
+	return x + y;
+}
+
+console.log(sum(2, 3)); 
+
+//result ------> 5
+
+b:-
+
+function sum(a) {
+	let firstEl = a;
+
+	function next(b) {
+		firstEl += b;
+	}
+	next.toString = function() {
+		return firstEl;
+	};
+
+	return next;
+}
+
+console.log(sum(2)(3));
+
+Q5:-
+
+var length = 10;
+
+function fn() {
+	console.log(this.length);
+	//10
+}
+
+var obj = {
+	length: 5,
+
+	method: function(fn) {
+		fn();
+		//10
+
+		arguments[0]();
+	}
+};
+
+obj.method(fn, 1);
+
+answer, 10 and undefined

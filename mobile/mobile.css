@@ -121,6 +121,10 @@ a {
   cursor: pointer;
 }
 
+.form-group small {
+  font-size: 12px;
+}
+
 /******form validation*******/
 .valid .alert {
   display: none;
@@ -190,7 +194,7 @@ a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #ffd101;
-  max-width: 90%;
+  max-width: 380px;
   width: 100%;
   margin: 0 auto;
   border-radius: 4px;
